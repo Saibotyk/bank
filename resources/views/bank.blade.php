@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +35,7 @@
             </nav>
             <form action="" class="col-12 col-md-4" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher..."
-                        aria-describedby="button-search">
+                    <input type="text" class="form-control" placeholder="Rechercher..." aria-describedby="button-search">
                     <button class="btn btn-primary" type="submit" id="button-search">
                         <i class="bi bi-search"></i>
                     </button>
@@ -73,6 +70,7 @@
                     <h2>{{ $title }}</h2>
                     <tbody>
                         @foreach ($transactions as $transaction)
+
                         <tr>
                             <td width="50" class="ps-3">
                             </td>
@@ -81,9 +79,9 @@
                                 {{ $transaction->name }}
                             </td>
                             <td class="text-end">
-                                <span class="rounded-pill text-nowrap bg-warning-subtle px-2">
-                                    {{ $transaction->amount }}
-                                </span>
+                            <span class="rounded-pill text-nowrap {{ $transaction->amount > 0 ? 'bg-success-subtle' : 'bg-warning-subtle' }} px-2">
+    {{ str_replace(".", ",", $transaction->amount) }}
+</span>
                             </td>
                             <td class="text-end text-nowrap">
                                 <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
