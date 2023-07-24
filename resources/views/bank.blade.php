@@ -7,5 +7,9 @@
 </head>
 <body>
     <h2>{{ $title }}</h2>
+    <ul>
+        @foreach ($transactions as $transaction)
+            <li>{{ $transaction->name }}</li>
+    </ul>
 </body>
 </html>
